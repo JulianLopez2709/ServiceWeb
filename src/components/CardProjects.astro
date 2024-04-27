@@ -1,9 +1,60 @@
 ---
-const { img, title, text } = Astro.props;
+let isTurn = false;
+
+const listProjects = [
+    {
+        img: "/desing-mockup.jpg",
+        title: "Lorem ipsum dolor",
+        description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis aperiam pariatur quam? Doloribus, nobis ducimus.",
+    },
+    {
+        img: "/desing-mockup.jpg",
+        title: "Lorem ipsum dolor",
+        description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis aperiam pariatur quam? Doloribus, nobis ducimus.",
+    },
+    {
+        img: "/desing-mockup.jpg",
+        title: "Lorem ipsum dolor",
+        description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis aperiam pariatur quam? Doloribus, nobis ducimus.",
+    },
+    {
+        img: "/desing-mockup.jpg",
+        title: "Lorem ipsum dolor",
+        description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis aperiam pariatur quam? Doloribus, nobis ducimus.",
+    },
+    {
+        img: "/desing-mockup.jpg",
+        title: "Lorem ipsum dolor",
+        description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis aperiam pariatur quam? Doloribus, nobis ducimus.",
+    },
+];
 ---
 
 <div class="flex-col justify-center items-start max-w-sm p-5">
-    <img src={img} alt={title} class="rounded-xl mb-20 w-full h-auto" />
-    <h2 class="font-bold text-lg">{title}</h2>
-    <p class="text-xs">{text}</p>
+    {
+        listProjects.map((item, index) => (
+            <div
+                class={` flex justify-center items-start max-w-sm p-5  ${isTurn ? "flex-row-reverse" : ""}`}
+            >
+                <img
+                    src={item.img}
+                    alt={item.title}
+                    class="rounded-xl mb-20 w-full h-auto"
+                />
+                <div class="flex">
+                    <p class="text-white bg-blue-500 rounded-full">{index}</p>
+                    <span class="text-blue-500">.</span>
+                </div>
+                <div class={`${(isTurn = !isTurn)}`}>
+                    <h2 class="font-bold text-lg">{item.title}</h2>
+                    <p class="text-xs">{item.description}</p>
+                </div>
+            </div>
+        ))
+    }
 </div>
