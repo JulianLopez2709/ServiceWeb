@@ -17,20 +17,24 @@ const menuItem = [
 ];
 ---
 
-<header class="bg-slate-900 w-full">
+<header class="w-full bg-slate-900 ">
     <nav class="w-full flex justify-between text-white p-5">
-            <a href="/" class="uppercase text-3xl"><span class="font-bold">loolopez</span><span class="text-purple-700 text-2xl">web</span></a href="/">
-            <ul class="gap-6 flex items-center">
-                {
-                    menuItem.map(item => (
-                        <li>
-                            <a href={item.path}>{item.title}</a>
-                        </li>
-                    ))
-                }
-                <button class="p-2 ml-4 bg-blue-700 text-center rounded">
-                    Start Demo
-                </button>
-            </ul>
+        <a href="/" class="uppercase text-3xl"
+            ><span class="font-bold">loolopez</span><span
+                class="text-purple-700 text-2xl">web</span
+            ></a
+        >
+        <ul class="gap-6 flex items-center">
+            {
+                menuItem.map((item) => (
+                    <li>
+                        <a href={item.path}>{item.title}</a>
+                    </li>
+                ))
+            }
+            <button class="p-2 ml-4 bg-blue-700 hover:bg-blue-800   text-center rounded">
+                Start Demo
+            </button>
+        </ul>
     </nav>
 </header>

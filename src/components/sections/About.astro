@@ -2,10 +2,10 @@
 import Container from "../Container.astro";
 ---
 
-<section class="w-full bg-slate-900" id="about">
+<section class="w-full bg-slate-900 relative" id="about">
     <Container>
-        <div class="flex justify-between items-center py-32">
-            <div class="flex flex-col  items-start h-full max-w-xl">
+        <div class="flex justify-between items-center py-44 gap-10">
+            <div class="flex flex-col items-start h-full max-w-xl">
                 <h1 class="text-white text-5xl font-bold mb-7">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 </h1>
@@ -14,14 +14,18 @@ import Container from "../Container.astro";
                     Maiores facere minima aliquid dolores mollitia beatae.
                 </p>
                 <div class="flex bg-white rounded p-1">
-                    <input type="text" placeholder="Enter your business" class="p-2 outline-none w-72" />
-                    <button class="bg-blue-700 rounded text-white p-2"
+                    <input
+                        type="text"
+                        placeholder="Enter your business"
+                        class="p-2 outline-none w-72"
+                    />
+                    <button class="bg-blue-700 hover:bg-blue-800 rounded text-white p-2"
                         >Start yout free</button
                     >
                 </div>
             </div>
 
-            <div class="max-w-xl h-full ">
+            <div class="max-w-md h-full">
                 <img
                     src="/about-photo.png"
                     alt=""

@@ -35,23 +35,32 @@ const listProjects = [
 ];
 ---
 
-<div class="flex-col justify-center items-start max-w-sm p-5">
+<div class="flex-col justify-center items-start">
     {
         listProjects.map((item, index) => (
             <div
-                class={` flex justify-center items-start max-w-sm p-5  ${isTurn ? "flex-row-reverse" : ""}`}
+                class={`grid justify-center items-start grid-cols-5 `}
             >
-                <img
-                    src={item.img}
-                    alt={item.title}
-                    class="rounded-xl mb-20 w-full h-auto"
-                />
-                <div class="flex">
-                    <p class="text-white bg-blue-500 rounded-full">{index}</p>
-                    <span class="text-blue-500">.</span>
+                <div class={`col-span-2 ${isTurn ? "order-last" : ""}`  }>
+                    <img
+                        src={item.img}
+                        alt={item.title}
+                        class="rounded-xl w-[400px] h-[200px] mb-10"
+                    />
                 </div>
-                <div class={`${(isTurn = !isTurn)}`}>
-                    <h2 class="font-bold text-lg">{item.title}</h2>
+
+                <div class={` flex justify-center items-center ${isTurn ? "order-3" : ""}`}>
+                    <ol class="relative text-gray-500 border-2 h-60">
+                        <li class="">
+                            <span class="absolute flex items-center justify-center w-6 h-6 rounded-full top-0 -start-3 bg-blue-500 text-white">
+                                {index + 1}
+                            </span>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class={`${(isTurn = !isTurn)} col-span-2`}>
+                    <h2 class="font-bold text-lg mb-5">{item.title}</h2>
                     <p class="text-xs">{item.description}</p>
                 </div>
             </div>
