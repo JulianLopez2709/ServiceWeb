@@ -33,6 +33,8 @@ const listProjects = [
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis aperiam pariatur quam? Doloribus, nobis ducimus.",
     },
 ];
+
+const sizeList = listProjects.length
 ---
 
 <div class="flex-col justify-center items-start">
@@ -45,12 +47,12 @@ const listProjects = [
                     <img
                         src={item.img}
                         alt={item.title}
-                        class="rounded-xl w-[400px] h-[200px] mb-10"
+                        class="rounded-xl w-[300] h-[150] md:w-[400px] md:h-[200px] mb-10"
                     />
                 </div>
 
                 <div class={` flex justify-center items-center ${isTurn ? "order-3" : ""}`}>
-                    <ol class="relative text-gray-500 border-2 h-60">
+                    <ol class={`relative text-gray-500 border-2 h-48 sm:h-60 ${sizeList == index + 1 ? 'border-none' : ''}`}>
                         <li class="">
                             <span class="absolute flex items-center justify-center w-6 h-6 rounded-full top-0 -start-3 bg-blue-500 text-white">
                                 {index + 1}
@@ -60,7 +62,7 @@ const listProjects = [
                 </div>
 
                 <div class={`${(isTurn = !isTurn)} col-span-2`}>
-                    <h2 class="font-bold text-lg mb-5">{item.title}</h2>
+                    <h2 class="font-bold text-base md:text-lg mb-5">{item.title}</h2>
                     <p class="text-xs">{item.description}</p>
                 </div>
             </div>

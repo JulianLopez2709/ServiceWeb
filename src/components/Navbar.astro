@@ -24,7 +24,7 @@ const menuItem = [
                 class="text-purple-700 text-2xl">web</span
             ></a
         >
-        <ul class="gap-6 flex items-center">
+        <ul class="gap-6 hidden items-center lg:flex">
             {
                 menuItem.map((item) => (
                     <li>
@@ -32,8 +32,8 @@ const menuItem = [
                     </li>
                 ))
             }
-            <button class="p-2 ml-4 bg-blue-700 hover:bg-blue-800   text-center rounded">
-                Start Demo
+            <button class="p-2 ml-4 bg-blue-700 hover:bg-blue-800 hover:scale-105 transition text-center rounded">
+                Start Know
             </button>
         </ul>
     </nav>
