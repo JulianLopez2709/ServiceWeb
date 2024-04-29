@@ -1,0 +1,44 @@
+---
+import Container from "../components/Container.astro";
+---
+
+<section
+    class="flex justify-center items-centerw-full bg-slate-900 relative"
+    id="about"
+>
+    <div
+        class="grid lg:grid-cols-5 w-full place-items-center lg:pl-8 px-8 py-8 lg:py-20 "
+    >
+        <div class="max-w-md lg:max-w-lg lg:col-span-2 mb-5">
+            <h1
+                class="text-white text-4xl lg:text-5xl xl:text-6xl font-bold mb-7 text-center lg:text-start"
+            >
+                Crea Sitios Web Increíbles
+            </h1>
+            <p class="text-gray-500 mb-7 lg:w-4/5 text-center lg:text-start">
+                Descubre cómo puedes impulsar tu presencia en línea con nuestros servicios.
+            </p>
+            <div class="flex w-full bg-white rounded p-1 gap-2 lg:w-4/5 justify-between items-center">
+                <input
+                    type="text"
+                    placeholder="Introduzca su empresa."
+                    class=" p-1 xl:p-2 outline-none w-3/5"
+                />
+                <button
+                    class="bg-blue-700 hover:bg-blue-800 rounded text-white p-1 xl:p-2 "
+                    >Empieza Gratis</button
+                >
+            </div>
+        </div>
+
+        <div class=" lg:col-span-3 max-w-lg lg:max-w-2xl ">
+            <img
+                src="/about-photo.png"
+                alt=""
+                class="inset-0 rounded-t-md col-end-3"
+                style=" filter: drop-shadow(0 0 80px rgba(0, 0, 0, .5));
+                    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);"
+            />
+        </div>
+    </div>
+</section>

@@ -1,0 +1,44 @@
+---
+import Container from "../components/Container.astro";
+
+const listTecnologies = [
+    {
+        path: "/astro.svg",
+        label: "astro",
+    },
+    {
+        path: "/kotlin.svg",
+        label: "kotlin",
+    },
+    {
+        path: "/ktor-icon.svg",
+        label: "ktor",
+    },
+    {
+        path: "/tailwind.svg",
+        label: "tailwind",
+    },
+];
+---
+
+<section class="border-b-2 border-gray-400 text-gray-500">
+    <Container>
+        <div class="flex items-center justify-between gap-5 py-5">
+            <p class="max-w-32 md:max-w-44 md:text-sm text-xs">
+                Equipo de trabajo, herramientas y diferentes tecnologias
+            </p>
+            {
+                listTecnologies.map((item) => (
+                        <img
+                            class="duration-300 transition-transform ease-in-out hover:scale-110 hover:saturate-150"
+                            style=""
+                            src={item.path}
+                            alt={item.label}
+                            height="70"
+                            width="70"
+                        />
+                ))
+            }
+        </div>
+    </Container>
+</section>

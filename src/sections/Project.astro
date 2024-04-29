@@ -1,0 +1,20 @@
+---
+import CardProjects from "../components/CardProjects.astro";
+import Container from "../components/Container.astro";
+---
+
+<section class="py-8 lg:py-16 h-full" id="projects">
+    <Container>
+        <div class="w-full flex flex-col justify-center items-center">
+            <h1 class="font-bold text-xl sm:text-3xl md:text-4xl w-1/2 text-center mb-5">
+                Creación de Sitios Web
+            </h1>
+            <p class="text-sm mb-7">
+                Diseño, desarrollo, entrega: Tu visión convertida en realidad.
+            </p>
+            <div class="flex justify-between items-center max-w-3xl">
+                <CardProjects />
+            </div>
+        </div>
+    </Container>
+</section>

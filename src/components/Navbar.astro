@@ -2,16 +2,16 @@
 import Container from "./Container.astro";
 
 const menuItem = [
-    {
+    /*{
         title: "About",
         path: "/#about",
-    },
+    },*/
     {
-        title: "Project",
+        title: "Servicio",
         path: "/#projects",
     },
     {
-        title: "Contact",
+        title: "Contacto",
         path: "/#contact",
     },
 ];
@@ -28,12 +28,12 @@ const menuItem = [
             {
                 menuItem.map((item) => (
                     <li>
-                        <a href={item.path}>{item.title}</a>
+                        <a class="hover:text-gray-300 transition" href={item.path}>{item.title}</a>
                     </li>
                 ))
             }
             <button class="p-2 ml-4 bg-blue-700 hover:bg-blue-800 hover:scale-105 transition text-center rounded">
-                Start Know
+                Empieza Ahora
             </button>
         </ul>
     </nav>

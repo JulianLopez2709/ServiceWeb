@@ -1,49 +1,49 @@
 ---
+import { Image } from "astro:assets";
+
 let isTurn = false;
 
 const listProjects = [
     {
-        img: "/desing-mockup.jpg",
-        title: "Lorem ipsum dolor",
+        img: "/desing-mockup.webp",
+        title: "Sabemos sobre Ti",
         description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis aperiam pariatur quam? Doloribus, nobis ducimus.",
+            "Nos tomamos el tiempo para entender tus necesidades y objetivos específicos, permite personalizar nuestros servicios para satisfacer tus requerimientos únicos, asegurando una colaboración efectiva y resultados exitosos.",
     },
     {
-        img: "/desing-mockup.jpg",
-        title: "Lorem ipsum dolor",
+        img: "/Website.webp",
+        title: "Diseño Original y Atractivo",
         description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis aperiam pariatur quam? Doloribus, nobis ducimus.",
+            "Creamos un diseño único y atractivo para tu página de aterrizaje, asegurando que se destaque entre la competencia. Nuestro enfoque en el diseño centrado en el usuario (UX) garantiza una experiencia óptima para tus clientes.",
     },
     {
-        img: "/desing-mockup.jpg",
-        title: "Lorem ipsum dolor",
+        img: "/programming.webp",
+        title: "Desarrollo de Código Avanzado",
         description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis aperiam pariatur quam? Doloribus, nobis ducimus.",
+            "Utilizamos las últimas herramientas y tecnologías en el desarrollo de código, garantizando que tu página de aterrizaje esté al día con las tendencias actuales. Esto no solo mejora el rendimiento y la funcionalidad de tu sitio, sino que también asegura su compatibilidad con una variedad de dispositivos y navegadores.",
     },
     {
-        img: "/desing-mockup.jpg",
-        title: "Lorem ipsum dolor",
+        img: "/feedback.webp",
+        title: "Retroalimentación Constante",
         description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis aperiam pariatur quam? Doloribus, nobis ducimus.",
+            "Mantenemos una comunicación abierta y constante contigo durante todo el proceso. Esta retroalimentación continua nos permite ajustar y refinar nuestro trabajo para asegurarnos de que estés completamente satisfecho con el resultado final. Tu opinión es fundamental para nosotros.",
     },
     {
-        img: "/desing-mockup.jpg",
-        title: "Lorem ipsum dolor",
+        img: "/finish.webp",
+        title: "Entrega Final y Capacitación",
         description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis aperiam pariatur quam? Doloribus, nobis ducimus.",
+            "Te entregamos el código fuente de tu página de aterrizaje, junto con una explicación detallada sobre cómo puedes actualizar y mejorar tu servicio en el futuro.",
     },
 ];
 
-const sizeList = listProjects.length
+const sizeList = listProjects.length;
 ---
 
 <div class="flex-col justify-center items-start">
     {
         listProjects.map((item, index) => (
-            <div
-                class={`grid justify-center items-start grid-cols-5 `}
-            >
-                <div class={`col-span-2 ${isTurn ? "order-last" : ""}`  }>
+            <div class={`grid justify-center items-start grid-cols-5 `}>
+                <div class={`col-span-2 ${isTurn ? "order-last" : ""}`}>
                     <img
                         src={item.img}
                         alt={item.title}
@@ -51,8 +51,12 @@ const sizeList = listProjects.length
                     />
                 </div>
 
-                <div class={` flex justify-center items-center ${isTurn ? "order-3" : ""}`}>
-                    <ol class={`relative text-gray-500 border-2 h-48 sm:h-60 ${sizeList == index + 1 ? 'border-none' : ''}`}>
+                <div
+                    class={` flex justify-center items-center h-full ${isTurn ? "order-3" : ""}`}
+                >
+                    <ol
+                        class={`relative text-gray-500 border-2 h-full sm:h-60 ${sizeList == index + 1 ? "border-none" : ""}`}
+                    >
                         <li class="">
                             <span class="absolute flex items-center justify-center w-6 h-6 rounded-full top-0 -start-3 bg-blue-500 text-white">
                                 {index + 1}
@@ -62,8 +66,10 @@ const sizeList = listProjects.length
                 </div>
 
                 <div class={`${(isTurn = !isTurn)} col-span-2`}>
-                    <h2 class="font-bold text-base md:text-lg mb-5">{item.title}</h2>
-                    <p class="text-xs">{item.description}</p>
+                    <h2 class="font-bold text-base md:text-lg mb-5">
+                        {item.title}
+                    </h2>
+                    <p class="text-xs mb-5">{item.description}</p>
                 </div>
             </div>
         ))
