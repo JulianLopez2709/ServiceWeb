@@ -1,5 +1,6 @@
 ---
 import Container from "../components/Container.astro";
+const key_form = import.meta.env.ACCESS_KEY_FORM;
 ---
 
 <section
@@ -7,7 +8,7 @@ import Container from "../components/Container.astro";
     id="about"
 >
     <div
-        class="grid lg:grid-cols-5 w-full place-items-center lg:pl-8 px-8 py-8 lg:py-20 "
+        class="grid lg:grid-cols-5 w-full place-items-center lg:pl-8 px-8 py-8 lg:py-20"
     >
         <div class="max-w-md lg:max-w-lg lg:col-span-2 mb-5">
             <h1
@@ -16,22 +17,32 @@ import Container from "../components/Container.astro";
                 Crea Sitios Web Increíbles
             </h1>
             <p class="text-gray-500 mb-7 lg:w-4/5 text-center lg:text-start">
-                Descubre cómo puedes impulsar tu presencia en línea con nuestros servicios.
+                Descubre cómo puedes impulsar tu presencia en línea con nuestros
+                servicios.
             </p>
-            <div class="flex w-full bg-white rounded p-1 gap-2 lg:w-4/5 justify-between items-center">
+            <form
+                class="flex w-full bg-white rounded p-1 gap-2 lg:w-4/5 justify-between items-center"
+                method="post"
+                id="formEmail"
+            >
+                <input type="hidden" name="access_key" value={key_form} />
                 <input
-                    type="text"
-                    placeholder="Introduzca su empresa."
-                    class=" p-1 xl:p-2 outline-none w-3/5"
+                    autocomplete="off"
+                    type="email"
+                    name="formEmail"
+                    placeholder="Introduzca Email de tu empresa.."
+                    class="p-1 xl:p-2 outline-none w-3/5"
+                    required
                 />
                 <button
-                    class="bg-blue-700 hover:bg-blue-800 rounded text-white p-1 xl:p-2 "
-                    >Empieza Gratis</button
+                    class="bg-blue-700 hover:bg-blue-800 rounded text-white p-1 xl:p-2"
+                    type="submit"
+                    id="resultEmail">Empieza Gratis</button
                 >
-            </div>
+            </form>
         </div>
 
-        <div class=" lg:col-span-3 max-w-lg lg:max-w-2xl ">
+        <div class="lg:col-span-3 max-w-lg lg:max-w-2xl">
             <img
                 src="/about-photo.png"
                 alt=""
@@ -42,3 +53,46 @@ import Container from "../components/Container.astro";
         </div>
     </div>
 </section>
+
+<script is:inline>
+    const formEmial = document.getElementById("formEmail");
+    const resultEmail = document.getElementById("resultEmail");
+
+    formEmial.addEventListener("submit", function (e) {
+        const formDataEmail = new FormData(formEmial);
+        e.preventDefault();
+
+        const objectEmail = Object.fromEntries(formDataEmail);
+        const jsonEmail = JSON.stringify(objectEmail);
+
+        resultEmail.innerHTML = "Enviando...";
+
+        fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: jsonEmail,
+        })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    resultEmail.innerHTML = "Enviado";
+                } else {
+                    console.log(response);
+                    resultEmail.innerHTML = json.message;
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+                resultEmail.innerHTML = "Something went wrong!";
+            })
+            .then(function () {
+                form.reset();
+                setTimeout(() => {
+                    resultEmail.style.display = "none";
+                }, 3000);
+            });
+    });
+</script>
