@@ -185,7 +185,7 @@ const key_form = import.meta.env.ACCESS_KEY_FORM;
                 const object = Object.fromEntries(formData);
                 const json = JSON.stringify(object);
 
-                result.innerHTML = "Please wait...";
+                result.innerHTML = "Enviado...";
 
                 fetch("https://api.web3forms.com/submit", {
                         method: "POST",
@@ -198,7 +198,7 @@ const key_form = import.meta.env.ACCESS_KEY_FORM;
                         .then(async (response) => {
                                 let json = await response.json();
                                 if (response.status == 200) {
-                                        result.innerHTML = json.message;
+                                        result.innerHTML = "Correo Enviado Exitosamente!";
                                 } else {
                                         console.log(response);
                                         result.innerHTML = json.message;
@@ -212,7 +212,7 @@ const key_form = import.meta.env.ACCESS_KEY_FORM;
                                 form.reset();
                                 setTimeout(() => {
                                         result.style.display = "none";
-                                }, 3000);
+                                }, 2000);
                         });
         });
 </script>

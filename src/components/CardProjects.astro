@@ -1,35 +1,39 @@
 ---
 import { Image } from "astro:assets";
-
+import mockupWeb from "../assets/desing-mockup.webp"
+import website from "../assets/Website.webp"
+import programming from "../assets/programming.webp"
+import feedback from "../assets/feedback.webp"
+import finish from "../assets/finish.webp"
 let isTurn = false;
 
 const listProjects = [
     {
-        img: "/desing-mockup.webp",
+        img:  mockupWeb,
         title: "Sabemos sobre Ti",
         description:
             "Nos tomamos el tiempo para entender tus necesidades y objetivos específicos, permite personalizar nuestros servicios para satisfacer tus requerimientos únicos, asegurando una colaboración efectiva y resultados exitosos.",
     },
     {
-        img: "/Website.webp",
+        img: website,
         title: "Diseño Original y Atractivo",
         description:
             "Creamos un diseño único y atractivo para tu página de aterrizaje, asegurando que se destaque entre la competencia. Nuestro enfoque en el diseño centrado en el usuario (UX) garantiza una experiencia óptima para tus clientes.",
     },
     {
-        img: "/programming.webp",
+        img: programming,
         title: "Desarrollo de Código Avanzado",
         description:
             "Utilizamos las últimas herramientas y tecnologías en el desarrollo de código, garantizando que tu página de aterrizaje esté al día con las tendencias actuales. Esto no solo mejora el rendimiento y la funcionalidad de tu sitio, sino que también asegura su compatibilidad con una variedad de dispositivos y navegadores.",
     },
     {
-        img: "/feedback.webp",
+        img: feedback,
         title: "Retroalimentación Constante",
         description:
             "Mantenemos una comunicación abierta y constante contigo durante todo el proceso. Esta retroalimentación continua nos permite ajustar y refinar nuestro trabajo para asegurarnos de que estés completamente satisfecho con el resultado final. Tu opinión es fundamental para nosotros.",
     },
     {
-        img: "/finish.webp",
+        img: finish,
         title: "Entrega Final y Capacitación",
         description:
             "Te entregamos el código fuente de tu página de aterrizaje, junto con una explicación detallada sobre cómo puedes actualizar y mejorar tu servicio en el futuro.",
@@ -44,11 +48,7 @@ const sizeList = listProjects.length;
         listProjects.map((item, index) => (
             <div class={`grid justify-center items-start grid-cols-5 `}>
                 <div class={`col-span-2 ${isTurn ? "order-last" : ""}`}>
-                    <img
-                        src={item.img}
-                        alt={item.title}
-                        class="rounded-xl w-[300] h-[150] md:w-[400px] md:h-[200px] mb-10"
-                    />
+                    <Image src={item.img} alt={item.title} class:list={"rounded-xl w-[300] h-[150] md:w-[400px] md:h-[200px] mb-10"}/>
                 </div>
 
                 <div
