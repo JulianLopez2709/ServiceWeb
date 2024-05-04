@@ -1,0 +1,74 @@
+---
+import jost from "@fontsource-variable/jost/files/jost-latin-wght-normal.woff2"
+
+
+interface Props {
+	title: string
+	description: string
+	canonical?: string
+	image?: string
+}
+
+const {
+	title,
+	description,
+	canonical,
+	image = "https://firebasestorage.googleapis.com/v0/b/appstockdb.appspot.com/o/Website.png?alt=media&token=485175b8-6e81-4fd6-ba38-1aabdbcfd009",
+} = Astro.props as Props
+
+const determineCanonicalURL = () => {
+	if (Astro.url.host.includes("localhost")) return "http://localhost:4321"
+	return canonical || Astro.url.pathname
+}
+
+const canonicalURL = new URL(determineCanonicalURL(), Astro.site)
+---
+
+<title>{title}</title>
+
+<meta charset="UTF-8" />
+<meta name="description" content={description} />
+
+<!--<
+<link rel="preconnect" href="" />
+link
+	rel="preload"
+	href={""}
+	as="font"
+	type="font/woff2"
+	crossorigin
+/>
+<link rel="preload" href={jost} as="font" type="font/woff2" crossorigin />
+
+<link rel="canonical" href={canonicalURL} />
+ -->
+
+<meta name="viewport" content="width=device-width" />
+<meta name="theme-color" content="#d5ff00" />
+
+<meta name="keywords" content="loolopez, web, paguina, website, landing, page, sitio web" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={new URL(image, Astro.url)} />
+
+<meta name="og:image" content={new URL(image, Astro.url)} />
+<meta name="og:title" content={title} />
+<meta name="og:description" content={description} />
+<meta name="og:url" content={Astro.url} />
+<meta name="og:site_name" content="loolopez" />
+<meta name="og:type" content="website" />
+<meta name="og:locale" content="es_ES" />
+
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon-32x32.png" />
+<link rel="apple-touch-icon" href="/favicon-32x32.png" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon-32x32.png" />
+<!-- <meta name="msapplication-config" content="/browserconfig.xml" />-->
+
+<!-- <script is:inline src="/registerSW.js"></script>
+<link rel="manifest" href="/manifest.webmanifest" />
