@@ -1,0 +1,39 @@
+---
+const about = [
+    {
+        title: "70M",
+        description: "Lorem ipsum dolor sit.",
+    },
+    {
+        title: "3m faster",
+        description: "Lorem ipsum dolor sit.",
+    },
+    {
+        title: "5%",
+        description: "Lorem ipsum dolor sit.",
+    },
+    {
+        title: "5 days",
+        description: "Lorem ipsum dolor sit.",
+    },
+];
+---
+
+<section id="projects">
+    <div class="p-20">
+        <h1 class="text-black font-bold text-3xl mb-10">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores,
+            impedit.
+        </h1>
+        <div class="flex justify-between items-center">
+            {
+                about.map((item) => (
+                    <div class="flex flex-col">
+                    <h2 class="text-blue-700 text-2xl">{item.title}</h2>
+                    <p class="text-sm">{item.description}</p>
+                </div>
+            ))
+        }
+        </div>
+    </div>
+</section>
