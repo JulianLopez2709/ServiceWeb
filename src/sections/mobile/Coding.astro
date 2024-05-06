@@ -1,12 +1,35 @@
+---
+const codigoEjemplo = `
+const modalOptions = {
+    placement: 'bottom-right',
+    backdrop: 'dynamic',
+    backdropClasses: 'bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-40',
+    onHide: () => {
+        console.log('modal is hidden');
+    },
+    onShow: () => {
+        console.log('modal is shown');
+    },
+    onToggle: () => {
+        console.log('modal has been toggled');
+    }
+}
+`;
+
+// Reemplaza las llaves con su representación HTML
+const codigoEjemploHTML = codigoEjemplo.replace(/(\{)/g, '&lbrace;').replace(/(\})/g, '&rbrace;');
+---
+
 <section>
-    <div class="m-10 p-10 flex bg-slate-900 rounded-3xl">
-        <div class="text-white ">
-            <h1 class="font-bold text-2xl mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+    <div class="m-20 px-14 py-20 flex bg-slate-900 rounded-3xl gap-20 h-screen">
+        <div class="text-white flex-grow flex-1">
+            <p class="mb-2">Lorem input</p>
+            <h1 class="font-bold text-5xl mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
             <p class="text-sm mb-5">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
                 velit eveniet quidem culpa, ut delectus officia vitae laborum
                 eius distinctio, inventore temporibus voluptatum! Blanditiis
-                enim explicabo assumenda! Sequi, delectus dignissimos? <br />
+                enim explicabo assumenda! Sequi, delectus dignissimos? <br /> <br>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
                 nisi magnam eius, sunt ipsum pariatur architecto ipsa delectus expedita
                 illo asperiores? Consectetur sunt quis magni incidunt dolor earum
@@ -23,18 +46,24 @@
                 </div>
             </div>
         </div>
-        <div>
+        <div class="flex-1 ">
             <div class="flex mb-5">
                 <a href="#">
-                    <bottom class="text-white bg-blue-700 p-2 rounded-md">Lorem, ipsum.</bottom>
+                    <bottom class="text-white bg-blue-700 p-1 rounded-md">Lorem, ipsum.</bottom>
                 </a>
                 <a href="#">
-                    <bottom class="text-blue-700 bg-white p-2 rounded-md">Lorem, ipsum.</bottom>
+                    <bottom class="text-blue-700 bg-white p-1 rounded-md">Lorem, ipsum.</bottom>
                 </a>
             </div>
-            <div class="h-full bg-black text-white flex justify-center items-center rounded-3xl p-5">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, quas officia. Sunt, asperiores iste! Aperiam suscipit, minus unde voluptatem fugit maiores cum consequatur repellendus blanditiis, aspernatur eligendi animi sunt quo provident possimus maxime dolores labore, modi in! Neque facilis repellat natus voluptatum aut eveniet possimus in voluptates quae recusandae beatae veniam, ut odit illo a ratione inventore minima. Tempora, obcaecati nemo? Quod nam tempora corporis repudiandae veniam, pariatur fugiat suscipit quae id dolorum consequatur quia provident natus illo autem commodi.
+            <div class=" bg-slate-800  text-white flex justify-center items-center rounded-3xl p-5 h-full">
+                <pre><code>{codigoEjemploHTML}</code></pre>
             </div>
         </div>
     </div>
 </section>
+
+<style>
+    code {
+    font-family: 'Courier New', Courier, monospace;
+}
+</style>

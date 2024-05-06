@@ -1,25 +1,68 @@
 ---
 import { Image } from "astro:assets";
+import imageIphone from "../../assets/mobile/iphone.png"
+const num1 = [
+    {
+        text:"- Lorem, ipsum dolor."
+    },
+    {
+        text:"- Lorem, ipsum dolor."
+    },
+    {
+        text:"- Lorem, ipsum dolor."
+    },
+    {
+        text:"- Lorem, ipsum dolor."
+    },
+    {
+        text:"- Lorem, ipsum dolor."
+    }
+]
+
+const num2 = [
+    {
+        text:"- Lorem, ipsum dolor."
+    },
+    {
+        text:"- Lorem, ipsum dolor."
+    },
+    {
+        text:"- Lorem, ipsum dolor."
+    },
+    {
+        text:"- Lorem, ipsum dolor."
+    },
+    {
+        text:"- Lorem, ipsum dolor."
+    }
+]
 ---
 
 <section>
-    <div class="flex">
-        <div  class="flex flex-col">
-            <h1 class="text-2xl text-black">Lorem, ipsum.</h1>
+    <div class="flex px-20 h-screen">
+        <div  class="flex flex-col flex-1">
+            <h1 class="text-4xl font-bold mb-5">Lorem, ipsum.</h1>
             <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ut nemo vero quae, provident saepe doloremque quibusdam odio eos officiis ex fugiat quos! Asperiores fuga sit aperiam laborum rem maxime?</p>
-            <h2>Lorem, ipsum.</h2>
-            <p>- Lorem, ipsum dolor.</p>
-            <p>- Lorem, ipsum dolor.</p>
-            <p>- Lorem, ipsum dolor.</p>
-            <p>- Lorem, ipsum dolor.</p>
-            <p>- Lorem, ipsum dolor.</p>
-
-            <h2>Lorem, ipsum.</h2>
-            <p>- Lorem, ipsum dolor.</p>
-            <p>- Lorem, ipsum dolor.</p>
-            <p>- Lorem, ipsum dolor.</p>
-            <p>- Lorem, ipsum dolor.</p>
-            <p>- Lorem, ipsum dolor.</p>
+            <h2 class="text-2xl font-bold mb-2">Lorem, ipsum.</h2>
+            {
+                num1.map(item =>(
+                    <p class="mb-2">{item.text}</p>
+                ))
+            }
+            
+            <br>
+            <h2 class="text-2xl font-bold mb-2">Lorem, ipsum.</h2>
+            {
+                num2.map(item =>(
+                    <p class="mb-2">{item.text}</p>
+                ))
+            }
+            
+        </div>
+        <div class="flex-1">
+            <picture class="flex items-center justify-end">
+                <Image src={imageIphone} alt="" />
+            </picture>
         </div>
     </div>
 </section>

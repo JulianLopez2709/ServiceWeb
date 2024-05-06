@@ -1,12 +1,17 @@
 ---
 import { Image } from "astro:assets";
 import Container from "../../components/Container.astro";
-import aboutImage from "../../assets/mobile/mobil-about.jpg"
+import aboutImage from "../../assets/mobile/banner-iphone.png"
 ---
 
 <section id="about" class="bg-slate-900 rounded-br-[20vh] py-5 px-10">
         <div class="flex text-white justify-center items-center px-10">
-            <h1 class="text-6xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, consectetur?</h1>
-            <Image src={aboutImage} alt="" height={500} width={500}/>
+            <div>
+                <h1 class="text-6xl font-bold mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, consectetur?</h1>
+                <a href="#">
+                    <button class="p-2 bg-blue-500 rounded hover:bg-blue-700">Lorem ipsum</button>
+                </a>
+            </div>
+            <Image src={aboutImage} alt="" height={500}/>
         </div>
 </section>
