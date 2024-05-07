@@ -15,13 +15,15 @@ const menuItem = [
         path: "/#contact",
     },
 ];
+const {subTitle} = Astro.props
+
 ---
 
 <header class="w-full bg-slate-900 ">
     <nav class="w-full flex justify-between text-white p-5">
         <a href="/" class="uppercase text-3xl"
             ><span class="font-bold">loolopez</span><span
-                class="text-purple-700 text-2xl">web</span
+                class="text-purple-700 text-2xl">{subTitle}</span
             ></a
         >
         <ul class="gap-6 hidden items-center lg:flex">

@@ -1,4 +1,7 @@
 ---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
 import About from "../sections/About.astro";
 import Contact from "../sections/Contact.astro";
 import Pricing from "../sections/Pricing.astro";
@@ -9,11 +12,13 @@ import Cta from "../sections/Cta.astro";
 ---
 
 <Layout title="loolopezWEB" description="servicio de creación de sitios web, centrada en proporcionar experiencias web modernas e intuitivas, diseñadas para mejorar la visibilidad y el rendimiento en Google y otros motores de búsqueda">
+	<Navbar subTitle="web"/>
 	<About />
 	<Tecnologies/>
 	<Project />
 	<Cta/>
 	<Contact />
+	<Footer subTitle="web"/>
 </Layout>
 
 <style></style>
