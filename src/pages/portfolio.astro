@@ -12,6 +12,7 @@ import LinkedInIcon from "../icons/LinkedIn.astro";
 import MailIcon from "../icons/Mail.astro";
 import SocialPill from "../components/portfolio/SocialPill.astro";
 import { Code } from "astro:components";
+import Proyect from "../components/portfolio/Proyect.astro";
 ---
 
 <Layout
@@ -19,28 +20,37 @@ import { Code } from "astro:components";
     description="Contrata a Julián López para crear aplicación web y móvil. Desarrollador Web. Especializado en crear aplicaciones unicas."
 >
     <div
-        class="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+        class="px-10 w-full h-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
     >
-        <Header />
+        <Header class="flex justify-center items-center"/>
         <main class="text-white">
-            <section class="w-full mx-auto lg:w-[720px] py-40 pb-24">
-                <h1 class="text-5xl font-bold flex flex-row gap-x-4 pb-7">
-                    Hey, soy Julián David<a
+            
+            <section class="w-full mx-auto md:w-[870px] py-24 pb-24">
+                <img
+                    class="size-24 rounded-md mb-2"
+                    src="https://avatars.githubusercontent.com/u/106407495?…00&u=27a734169fba8cf704448430d8c40da1edfa51e1&v=4"
+                    alt="Logo Avatar GitHub"
+                />
+                <h1
+                    class="text-2xl sm:text-3xl md:text-5xl font-bold flex flex-row gap-x-4 pb-7"
+                >
+                    Hey, soy Julián<span class="hidden sm:flex">David</span><a
                         href="https://www.linkedin.com/in/julian-lopez09/"
                         class="flex justify-center items-center"
                         ><Badge>Disponible para trabajar</Badge></a
                     >
                 </h1>
-                <h2 class="text-2xl pb-7">
-                    +3 años de experiencia. <span class="text-yellow-400"
+                <h2 class="text-xl sm:text-2xl pb-7 sm:font-semibold">
+                    +3 años de experiencia. <span class="text-yellow-400 "
                         >Tecnologo en Analisis y Desarrollo de Software</span
                     ><span class="text-blue-400/80"> de Colombia.</span>
                     <span class="text-red-400">
-                        Especializado en desarrollar aplicaciones y páginas unicas.
+                        Especializado en Desarrollar Aplicaciones y Páginas
+                        unicas.
                     </span>
                 </h2>
                 <ul>
-                    <li class="flex gap-x-4">
+                    <li class="flex gap-4 flex-wrap">
                         <SocialPill href="https://github.com/JulianLopez2709">
                             <GitHubIcon class="size-6" />
                             GitHub
@@ -61,7 +71,7 @@ import { Code } from "astro:components";
                 </ul>
             </section>
 
-            <section id="experience" class="w-full mx-auto lg:w-[720px]">
+            <section id="experience" class="w-full mx-auto md:w-[870px]">
                 <h2
                     class="flex items-center gap-x-4 mb-6 text-2xl font-semibold"
                 >
@@ -70,33 +80,34 @@ import { Code } from "astro:components";
                 <Experience />
             </section>
 
-
-            <section id="proyecto" class="w-full mx-auto lg:w-[720px]">
+            <section id="proyecto" class="w-full mx-auto md:w-[870px] pb-14">
                 <h2
                     class="flex items-center gap-x-4 mb-6 text-2xl font-semibold"
                 >
                     <CodeIcon class="size-6" /> Proyectos
                 </h2>
+
+                <Proyect/>
             </section>
 
-
-
-            <section id="sobre-mi" class="w-full mx-auto lg:w-[720px]">
-                <h2
-                    class="flex items-center gap-x-4 mb-6 text-2xl font-semibold"
-                >
+            <section id="sobre-mi" class="w-full mx-auto md:w-[870px]">
+                <h2 class="flex items-center gap-x-4 mb-6 text-2xl font-semibold">
                     <PersonIcon class="size-6" /> Sobre mí
                 </h2>
-
-
-                <div>
-
-                </div>
+                <p class="text-base md:text-xl leading-relaxed text-pretty order-2 md:order-1 ">
+                    Soy <span class="text-yellow-200">Julián David López</span>, un desarrollador apasionado por la <span class="text-yellow-200">tecnología</span> y el diseño de <span class="text-yellow-200">experiencias de usuario</span> intuitivas. Desde que inicié mi carrera, he trabajado en diversos proyectos, aplicando mi conocimiento en tecnologías como <span class="text-yellow-200">Kotlin</span>, <span class="text-yellow-200">Jetpack Compose</span>, <span class="text-yellow-200">Node.js</span>, y <span class="text-yellow-200">React</span> para crear soluciones eficientes y escalables.
+                    <br><br>
+                    Actualmente, estoy enfocado en mejorar mis habilidades en <span class="text-yellow-200">desarrollo móvil</span> y <span class="text-yellow-200">backend</span>, donde me destaco en la construcción de aplicaciones <span class="text-yellow-200">robustas</span> y <span class="text-yellow-200">seguras</span>. He tenido el privilegio de representar a mi región en competencias de programación como <span class="text-yellow-200">WorldSkills</span>, donde fui reconocido a nivel <span class="text-yellow-200">nacional</span>.
+                    <br><br>
+                    Mi objetivo es seguir creciendo como profesional y aportar mi conocimiento en <span class="text-yellow-200">proyectos innovadores</span> que generen un <span class="text-yellow-200">impacto positivo</span>. Me motiva aprender y compartir mis habilidades, y espero poder contribuir al desarrollo de productos que mejoren la vida de las personas y promuevan el <span class="text-yellow-200">crecimiento tecnológico</span> en la industria.
+                </p>
             </section>
+            
         </main>
 
-        <FooterMobile/>
+        <FooterMobile />
     </div>
 </Layout>
 
-<style></style>
+<style>
+</style>
