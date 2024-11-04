@@ -1,0 +1,33 @@
+---
+import LinkedIn from "../../icons/LinkedIn.astro";
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+    {
+        date: "Diciembre 2023 - Julio 2024",
+        title: "Desarrollador de Software - Optica Deluxe",
+        description:
+            "Desarrollo de una aplicación para tablet en Android Studio, con un enfoque en experiencia de usuario fluida. Creación de APIs en Node.js y documentación con Swagger. Administración de bases de datos MySQL y SQLite. Desarrollo de tienda e-commerce en Django y React.js.",
+        link:"#",
+    },
+    {
+        date: "Marzo 2022 - Julio 2024",
+        title: "Tecnólogo en Análisis y Desarrollo de Software - SENA Caldas",
+        description:
+            "Desarrollo de software de gestión odontológica con agenda de citas y recordatorios automáticos. Backend: Node.js y PostgreSQL. Frontend: Next.js y Kotlin. Infraestructura gestionada en Cloudflare. Creación de aplicaciones móviles para proyectos formativos usando diversas APIs.",
+    },
+];
+
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+    {
+        EXPERIENCE.map((experience) => (
+            <li>
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }
+</ol>
+
+<style></style>

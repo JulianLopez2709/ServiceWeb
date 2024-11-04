@@ -1,0 +1,130 @@
+---
+import NextIcon from "../../icons/Next.astro";
+import KotlinIcon from "../../icons/kotlin.astro";
+import JavaScriptIcon from "../../icons/JavaScript.astro";
+import TailwindIcon from "../../icons/TailwindCSS.astro";
+import NodeIcon from "../../icons/Node.astro";
+import ReactIcon from "../../icons/React.astro";
+import AndroidIcon from "../../icons/Android.astro";
+import MySQLIcon from "../../icons/MySql.astro";
+import SequelizeIcon from "../../icons/Sequilize.astro";
+import WebSocketIcon from "../../icons/WebSocket.astro";
+
+const TAGS = {
+    NEXT: {
+        name: "Next.js",
+        class: "bg-black",
+        icon: NextIcon,
+    },
+    KOTLIN: {
+        name: "Kotlin",
+        class: "bg-purple-300",
+        icon: KotlinIcon,
+    },
+    JAVASCRIPT: {
+        name: "JavaScript",
+        class: "bg-yellow-500/80",
+        icon: JavaScriptIcon,
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-blue-500/80",
+        icon: TailwindIcon,
+    },
+    NODE: {
+        name: "Node.js",
+        class: "bg-green-500",
+        icon: NodeIcon,
+    },
+    REACT: {
+        name: "React.js",
+        class: "bg-blue-300",
+        icon: ReactIcon,
+    },
+    ANDROID: {
+        name: "Android",
+        class: "bg-green-700",
+        icon: AndroidIcon,
+    },
+    MYSQL: {
+        name: "MySQL",
+        class: "bg-orange-600",
+        icon: MySQLIcon,
+    },
+    WEBSOCKET: {
+        name: "WebSocket",
+        class: "bg-purple-600",
+        icon: WebSocketIcon,
+    },
+    SEQUELIZE: {
+        name: "Sequelize",
+        class: "bg-indigo-400",
+        icon: SequelizeIcon,
+    },
+};
+
+const PROYECT = [
+    {
+        title: "Shiny Desk - Plataforma de Gestión de Consultorios",
+        tags: [TAGS.KOTLIN, TAGS.NODE, TAGS.REACT, TAGS.SEQUELIZE],
+        description:
+            "Solución integral para la administración de consultorios médicos, ofreciendo funcionalidades de agendamiento, recordatorios automáticos y gestión de historiales. Desarrollada en Node.js, Kotlin, React y Sequelize para una arquitectura sólida y modular, con bases de datos MySQL y SQLite que garantizan una experiencia de usuario fluida.",
+        github: "",
+        link: null,
+        img: "/projects/shinydeskproyectavaner.webp",
+    },
+    {
+        title: "Óptica Deluxe - Ecommerce de Ópticas y Gestión de Ventas",
+        tags: [TAGS.ANDROID, TAGS.NODE, TAGS.MYSQL, TAGS.REACT],
+        description:
+            "Aplicación nativa de Android optimizada para tablet, diseñada para un proceso de compra eficiente en una óptica. Incluye una tienda ecommerce desarrollada con Django y React.js, junto con APIs en Node.js documentadas con Swagger. La base de datos MySQL y SQLite asegura un rendimiento óptimo para manejar grandes volúmenes de datos.",
+        github: "",
+        link: null,
+        img: "/projects/dexuleproyectvaner.webp",
+    },
+    {
+        title: "App Prohibida - Sistema de Pedidos con WebSockets",
+        tags: [TAGS.NODE, TAGS.REACT, TAGS.WEBSOCKET],
+        description:
+            "Aplicación diseñada para optimizar el flujo de pedidos en un restaurante, permitiendo a los usuarios realizar órdenes en tiempo real mediante WebSockets. Desarrollada con Node.js y React, la app asegura una comunicación instantánea entre los clientes y el personal, mejorando la eficiencia en la gestión de pedidos.",
+        github: "",
+        link: null,
+        img: "/projects/appprohibidaprojectavaner.webp",
+    },
+];
+
+---
+
+{
+    PROYECT.map(({ title, tags, description, img }) => (
+        <div
+            class="md:flex gap-3 mb-6
+        "
+        >
+            <div class="w-full md:w-1/2">
+                <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                    <img
+                        class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                        src={img}
+                        alt={`captura de pantalla de proyecto ${title}`}
+                    />
+                </div>
+            </div>
+
+            <div class="w-full md:w-1/2 md:max-w-lg">
+                <div class="flex flex-col">
+                    <h1 class="text-xl md:text-3xl font-bold mb-3 ">{title}</h1>
+                    <ul class="flex gap-4 mb-4 flex-wrap" >
+                        {tags.map((tag) => (
+                            <li class={`p-2 rounded-xl flex justify-center items-center ${tag.class}`}>
+                                <tag.icon class={`size-5 ${tag.icon}`} />
+                                <p class="text-xs ml-2">{tag.name}</p>
+                            </li>
+                        ))}
+                    </ul>
+                    <p class="opacity-80">{description}</p>
+                </div>
+            </div>
+        </div>
+    ))
+}
