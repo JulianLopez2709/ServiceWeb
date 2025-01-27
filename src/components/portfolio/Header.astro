@@ -1,14 +1,26 @@
 ---
+let scrollY = 0 
 ---
 
-<header class={`flex justify-center items-center py-4 m-auto  text-white`}>
-    <nav class="text-sm flex justify-between items-center  gap-x-5 p-2">
+<header class={`fixed flex justify-center items-center py-4 mx-auto w-full z-10 shadow-sm top-0 text-white`} >
+    <nav class="text-sm flex justify-between items-center gap-x-5 p-2 rounded-xl " >
         <a href="#experience">Experiencia</a>
         <a href="#proyecto">Proyectos</a>
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#contacto">Contactame</a>
     </nav>
 </header>
+
+<script>
+ const nav = document.querySelector("nav");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      nav.classList.add("bg-blue-950", "bg-opacity-60", "backdrop-blur-md");
+    } else {
+      nav.classList.remove("bg-blue-950", "bg-opacity-60", "backdrop-blur-md");
+    }
+  });
+</script>
 
 <style>
     a:hover{
