@@ -22,15 +22,22 @@ import Proyect from "../components/portfolio/Proyect.astro";
     <div
         class="px-10 w-full h-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
     >
-        <Header class="flex justify-center items-center "/>
+        <Header class="flex justify-center items-center" />
         <main class="text-white">
-            
             <section class="w-full mx-auto md:w-[870px] py-24 pb-24">
-                <img
-                    class="size-24 rounded-md mb-2"
-                    src="https://avatars.githubusercontent.com/u/106407495?…00&u=27a734169fba8cf704448430d8c40da1edfa51e1&v=4"
-                    alt="Logo Avatar GitHub"
-                />
+                <div class="flex gap-5 items-center">
+                    <img
+                        class="size-24 rounded-md mb-2"
+                        src="https://avatars.githubusercontent.com/u/106407495?…00&u=27a734169fba8cf704448430d8c40da1edfa51e1&v=4"
+                        alt="Logo Avatar GitHub"
+                    />
+
+                    <a
+                        class="p-2 border-blue-700 bg-blue-400 rounded-md"
+                        href="/src/assets/cvtodoful.pdf"
+                        download="portfolio-julian-lopez">Descargar Portfolio</a
+                    >
+                </div>
                 <h1
                     class="text-2xl sm:text-3xl md:text-5xl font-bold flex flex-row gap-x-4 pb-7"
                 >
@@ -41,7 +48,7 @@ import Proyect from "../components/portfolio/Proyect.astro";
                     >
                 </h1>
                 <h2 class="text-xl sm:text-2xl pb-7 sm:font-semibold">
-                    +1 años de experiencia. <span class="text-yellow-400 "
+                    +1 años de experiencia. <span class="text-yellow-400"
                         >Tecnologo en Analisis y Desarrollo de Software</span
                     ><span class="text-blue-400/80"> de Colombia.</span>
                     <span class="text-red-400">
@@ -67,10 +74,6 @@ import Proyect from "../components/portfolio/Proyect.astro";
                             <MailIcon class="size-6" />
                             jdlopez4828@gmail.com
                         </SocialPill>
-
-                        <SocialPill href="/src/assets/cvtodoful.pdf">
-                            Descargar Portfolio
-                        </SocialPill>
                     </li>
                 </ul>
             </section>
@@ -91,27 +94,60 @@ import Proyect from "../components/portfolio/Proyect.astro";
                     <CodeIcon class="size-6" /> Proyectos
                 </h2>
 
-                <Proyect/>
+                <Proyect />
             </section>
 
             <section id="sobre-mi" class="w-full mx-auto md:w-[870px]">
-                <h2 class="flex items-center gap-x-4 mb-6 text-2xl font-semibold">
+                <h2
+                    class="flex items-center gap-x-4 mb-6 text-2xl font-semibold"
+                >
                     <PersonIcon class="size-6" /> Sobre mí
                 </h2>
-                <p class="text-base md:text-xl leading-relaxed text-pretty order-2 md:order-1 ">
-                    Soy <span class="text-yellow-200">Julián David López</span>, un desarrollador apasionado por la <span class="text-yellow-200">tecnología</span> y el diseño de <span class="text-yellow-200">experiencias de usuario</span> intuitivas. Desde que inicié mi carrera, he trabajado en diversos proyectos, aplicando mi conocimiento en tecnologías como <span class="text-yellow-200">Kotlin</span>, <span class="text-yellow-200">Jetpack Compose</span>, <span class="text-yellow-200">Node.js</span>, y <span class="text-yellow-200">React</span> para crear soluciones eficientes y escalables.
-                    <br><br>
-                    Actualmente, estoy enfocado en mejorar mis habilidades en <span class="text-yellow-200">desarrollo móvil</span> y <span class="text-yellow-200">backend</span>, donde me destaco en la construcción de aplicaciones <span class="text-yellow-200">robustas</span> y <span class="text-yellow-200">seguras</span>. He tenido el privilegio de representar a mi región en competencias de programación como <span class="text-yellow-200">WorldSkills</span>, donde fui reconocido a nivel <span class="text-yellow-200">nacional</span>.
-                    <br><br>
-                    Mi objetivo es seguir creciendo como profesional y aportar mi conocimiento en <span class="text-yellow-200">proyectos innovadores</span> que generen un <span class="text-yellow-200">impacto positivo</span>. Me motiva aprender y compartir mis habilidades, y espero poder contribuir al desarrollo de productos que mejoren la vida de las personas y promuevan el <span class="text-yellow-200">crecimiento tecnológico</span> en la industria.
+                <p
+                    class="text-base md:text-xl leading-relaxed text-pretty order-2 md:order-1"
+                >
+                    Soy <span class="text-yellow-200">Julián David López</span>,
+                    un desarrollador apasionado por la <span
+                        class="text-yellow-200">tecnología</span
+                    > y el diseño de <span class="text-yellow-200"
+                        >experiencias de usuario</span
+                    > intuitivas. Desde que inicié mi carrera, he trabajado en diversos
+                    proyectos, aplicando mi conocimiento en tecnologías como <span
+                        class="text-yellow-200">Kotlin</span
+                    >, <span class="text-yellow-200">Jetpack Compose</span>, <span
+                        class="text-yellow-200">Node.js</span
+                    >, y <span class="text-yellow-200">React</span> para crear soluciones
+                    eficientes y escalables.
+                    <br /><br />
+                    Actualmente, estoy enfocado en mejorar mis habilidades en <span
+                        class="text-yellow-200">desarrollo móvil</span
+                    > y <span class="text-yellow-200">backend</span>, donde me
+                    destaco en la construcción de aplicaciones <span
+                        class="text-yellow-200">robustas</span
+                    > y <span class="text-yellow-200">seguras</span>. He tenido
+                    el privilegio de representar a mi región en competencias de
+                    programación como <span class="text-yellow-200"
+                        >WorldSkills</span
+                    >, donde fui reconocido a nivel <span
+                        class="text-yellow-200">nacional</span
+                    >.
+                    <br /><br />
+                    Mi objetivo es seguir creciendo como profesional y aportar mi
+                    conocimiento en <span class="text-yellow-200"
+                        >proyectos innovadores</span
+                    > que generen un <span class="text-yellow-200"
+                        >impacto positivo</span
+                    >. Me motiva aprender y compartir mis habilidades, y espero
+                    poder contribuir al desarrollo de productos que mejoren la
+                    vida de las personas y promuevan el <span
+                        class="text-yellow-200">crecimiento tecnológico</span
+                    > en la industria.
                 </p>
             </section>
-            
         </main>
 
         <FooterMobile />
     </div>
 </Layout>
 
-<style>
-</style>
+<style></style>
